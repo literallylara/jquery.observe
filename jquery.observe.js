@@ -41,8 +41,8 @@
 				onRemoved && [].forEach.call(mutation.removedNodes, v => findElement(v,selector,onRemoved))
 			});
 		});
-		
-		observer.observe(this, { childList: true, subtree: true })
+
+		observer.observe(this, { childList: true })
 		observers.push[this,observer]
 	})}
 
