@@ -1,4 +1,4 @@
-/*! jquery.observe v0.0.2
+/*! jquery.observe v0.0.3
  * 
  * Copyright (c) 2016 @literallylara
  * Under the MIT license:
@@ -31,8 +31,13 @@
 		$(target).find(selector).each(callback)
 	}
 
-	$.fn.observe = function(selector, onAdded, onRemoved) { this.each(function()
+	$.fn.observe = function(selector, arg1, arg2, arg3) { this.each(function()
 	{
+		var arg1Obj   = typeof arg1 == "object"
+		var options   = arg1Obj ? arg1 : { childList: true }
+		var onAdded   = arg1Obj ? arg2 : arg1
+		var onRemoved = arg1Obj ? arg3 : arg2
+
 		var observer = new MutationObserver(function(mutations)
 		{
 			mutations.forEach(function(mutation)
@@ -42,11 +47,11 @@
 			});
 		});
 
-		observer.observe(this, { childList: true, subtree: true })
+		observer.observe(this, options)
 		observers.push[this,observer]
 	})}
 
-	$.fn.ignore = function(opts) { this.each(function()
+	$.fn.ignore = function() { this.each(function()
 	{
 		var observer, index
 

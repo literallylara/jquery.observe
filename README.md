@@ -8,5 +8,8 @@ Searches the entire root tree for matching nodes everytime a node was added or r
 
 ## Usage
 
-`$(root).observe(selector, onAdded, onRemoved)`  
-`$(root).ignore()`
+`$(root).observe(selector [, options], onAdded, onRemoved)`  
+`$(root).ignore()`  
+
+For available options see [MutationObserverInit](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver#MutationObserverInit).  
+Default options are: `{ childList: true }`
