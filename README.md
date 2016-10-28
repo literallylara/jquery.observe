@@ -13,3 +13,5 @@ Searches the entire root tree for matching nodes everytime a node was added or r
 
 For available options see [MutationObserverInit](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver#MutationObserverInit).  
 Default options are: `{ childList: true }`
+
+`this` inside `onAdded` and `onRemoved` refers to the targeted node.
