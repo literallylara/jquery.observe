@@ -1,4 +1,4 @@
-/*! jquery.simplescroll
+/*! jquery.observe v0.0.2
  * 
  * Copyright (c) 2016 @literallylara
  * Under the MIT license:
@@ -23,9 +23,9 @@
 {
 	"use strict";
 
-	let observers = []
+	var observers = []
 
-	let findElement = function(target, selector, callback)
+	var findElement = function(target, selector, callback)
 	{
 		if ($(target).is(selector)) return callback(target)
 		$(target).find(selector).each(callback)
@@ -42,13 +42,13 @@
 			});
 		});
 
-		observer.observe(this, { childList: true })
+		observer.observe(this, { childList: true, subtree: true })
 		observers.push[this,observer]
 	})}
 
 	$.fn.ignore = function(opts) { this.each(function()
 	{
-		let observer, index
+		var observer, index
 
 		observers.forEach(function(v,i)
 		{
