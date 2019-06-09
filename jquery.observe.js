@@ -48,7 +48,7 @@
 		});
 
 		observer.observe(this, options)
-		observers.push[this,observer]
+		observers.push([this,observer])
 	})}
 
 	$.fn.ignore = function() { this.each(function()
